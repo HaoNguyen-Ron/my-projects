@@ -1,0 +1,31 @@
+.form {
+    position: relative;
+}
+.form__item{
+    margin-bottom: 3px;
+    color: var(--main-color);
+}
+.form__item:hover{
+    color: var(--hover-color);
+}
+
+.formContainer{
+    max-width: 700px;
+}
+
+.modal__btn{
+    background-color: var(--main-color);
+    color: white;
+}
+
+.modal__btn:hover{
+    background-color: var(--hover-color);
+}
+
+.modal__link{
+    color: white;
+}
+
+.form__height{
+   min-height: 300px;
+}

@@ -1,0 +1,64 @@
+.media_tablet {
+    display: none;
+}
+
+.loginPart {
+    position: relative;
+}
+
+.loginPart__item {
+    margin-bottom: 3px;
+    color        : var(--main-color);
+}
+
+.loginPart__item:hover {
+    color: var(--hover-color);
+}
+
+.loginPart__title {
+    color        : var(--main-color);
+}
+
+.loginPart__item::before {
+    content         : '';
+    position        : absolute;
+    right           : 0;
+    left            : 0;
+    bottom          : 0;
+    height          : 0.1rem;
+    background-color: var(--main-color);
+    transition      : transform 200ms ease-in-out;
+    transform       : scaleX(0)
+}
+
+.loginPart__btn{
+    background-color: var(--main-color);
+    color: white;
+}
+
+.loginPart__btn:hover{
+    background-color: var(--hover-color);
+}
+
+.loginPart__item:hover::before,
+.loginPart__item:focus::before {
+    transform: scaleX(1)
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .media_pc {
+        display: none;
+    }
+
+    .media_tablet {
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    .media_tablet {
+        margin-bottom: 20px;
+    }
+}

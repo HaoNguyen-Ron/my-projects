@@ -1,0 +1,82 @@
+.searchbar {
+    min-width: 500px !important;
+}
+
+.searchbar__input{
+    position: relative;
+}
+
+.searchbar__input-display{
+    position: absolute;
+    background-color: white;
+    border: 1px solid var(--main-color);
+    border-radius: 15px;
+    z-index: 2;
+    box-shadow: 20px;
+    width: 100%;
+
+}
+
+.searchbar__input-img{
+    max-width: 70px;
+    max-height: 70vh;
+}
+
+.searchbar__input-ul{
+    max-height: 450px;
+    padding: 10px;
+}
+.searchbar__input-ul-none{
+    max-height: 450px;
+    padding: 10px;
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+}
+
+.searchbar__input-li{
+    max-height: 20vh;
+    border-bottom: 1px solid var(--main-color);
+    padding: 10px;
+}
+.searchbar__input-li-a{
+    max-height: 20vh;
+    width: 100%;
+    padding: 10px;
+    color: black;
+}
+.searchbar__input-li:last-child{
+    max-height: 20vh;
+    border-bottom: none;
+    padding: 10px;
+}
+
+.searchbar__input-p{
+    color: var(--main-color);
+}
+
+@media only screen and (max-width: 1024px) {
+    .searchbar {
+        min-width: 350px !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .searchbar {
+        min-width: 300px !important;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    .searchbar {
+        min-width: 210px !important;
+    }
+}
+
+@media only screen and (max-width: 363px) {
+    .searchbar_btn {
+        display: block;
+        min-width: 300px !important;
+    }
+}

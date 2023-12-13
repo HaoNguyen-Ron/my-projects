@@ -1,0 +1,90 @@
+.form__item {
+    margin-bottom: 3px;
+    color: var(--main-color);
+}
+
+.form__item:hover {
+    color: var(--hover-color);
+}
+
+.modal__btn {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.modal__btn:hover {
+    background-color: var(--hover-color);
+}
+
+.modal__link {
+    color: white;
+}
+
+.custom-select-with-scroll {
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.searchbar__input-img{
+    max-width: 70px;
+    max-height: 70vh;
+}
+
+.searchbar__input-p{
+    color: var(--main-color);
+}
+
+.border__bottom{
+    border-bottom: 2px solid var(--main-color);
+}
+.border__bottom:last-child{
+    border-bottom: none;
+}
+
+
+.item{
+    margin-bottom: 3px;
+    color: var(--main-color);
+}
+.item:hover{
+    color: var(--hover-color);
+}
+
+.title{
+    color: var(--main-color);
+}
+
+.btn{
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+}
+
+.btn:hover{
+    background-color: var(--hover-color);
+}
+
+.btn:visited{
+    background-color: #d3d3d3;
+}
+
+.link{
+    color: white;
+}
+
+.tbl{
+    vertical-align: middle;
+}
+
+/* eye show */
+.input-group-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position : absolute;
+    top      : 60%;
+    right    : 30px;
+    transform: translateY(-50%);
+    cursor   : pointer;
+}

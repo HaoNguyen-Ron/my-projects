@@ -1,0 +1,84 @@
+.services {
+    background: #f8f8f8;
+}
+
+.services_icon {
+    font-size: 30px;
+    color    : #060606;
+}
+
+.borderEnd {
+    border-right: 1px solid #ada1a1;
+}
+
+.borderEnd:last-child {
+    border-right: none;
+}
+
+.txt-link {
+    display        : inline-block;
+    position       : relative;
+    color          : #000;
+    text-decoration: none;
+    cursor         : pointer;
+    font-weight    : 500;
+}
+
+.txt-link::after {
+    content    : '';
+    position   : absolute;
+    border-top : 2px solid #0b0b0b;
+    border-left: 2px solid #0d0d0b;
+    height     : 8px;
+    width      : 8px;
+    right      : -10px;
+    top        : 8px;
+    transform  : rotate(135deg);
+    transition : all 0.3s ease;
+
+}
+
+.txt-link:hover::after {
+    border-top-color : #f30808;
+    border-left-color: #f30808;
+    transform        : rotate(135deg) scale(1.2);
+}
+
+.txt-link:hover {
+    color     : #f30808;
+    transition: all 0.3s ease;
+    transform : scale(1.2);
+}
+
+
+@media (max-width: 575.98px) {
+    .col-xs-12 {
+        border-right: none;
+    }
+
+    .borderEnd {
+        border-right : none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .borderEnd:last-child {
+        border-bottom: none;
+    }
+
+}
+
+@media (max-width: 767.98px) {
+    .borderEnd {
+        border-right : none;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .borderEnd:last-child {
+        border-bottom: none;
+    }
+
+    .services-name {
+        font-size: 18px;
+    }
+
+}

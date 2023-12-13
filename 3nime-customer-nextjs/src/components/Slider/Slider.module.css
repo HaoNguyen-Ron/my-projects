@@ -1,0 +1,67 @@
+   .groupbanner-hover {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    text-align: center;
+  }
+  
+   .groupbanner-hover:hover img:not(.lazyload) {
+    -ms-transform: scale(1.08);
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+  }
+  
+   .title {
+    margin-top: 20px;
+  }
+  
+   .groupbanner-hover img:not(.lazyload) {
+    transition: opacity 0.3s,
+      transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -webkit-transition: opacity 0.3s,
+      transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    -ms-transition: opacity 0.3s,
+      transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .custom{
+    white-space: nowrap;         
+    overflow: hidden;           
+    text-overflow: ellipsis;    
+    min-width: 300px;   
+  }
+
+  .overflow-ellipsis {
+    overflow: hidden;           
+    text-overflow: ellipsis;    
+    width: 300px;   
+    word-wrap: break-word;   }   
+
+    .section-heading {
+      margin-bottom: 35px;
+      display:block;
+      box-sizing: border-box;
+      text-align: center!important;
+    }
+    
+    .section-heading .hTitle {
+      font-size: 28px;
+      margin: 0 0 10px;
+      font-weight: 700;
+      box-sizing: border-box;
+      text-align: center!important;
+    
+    }
+    
+    :hover.section-heading .hTitle {
+      color: red;
+    }
+    
+    
+    .section {
+      margin-top: 40px;
+    }

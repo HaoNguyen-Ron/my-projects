@@ -1,0 +1,11 @@
+.item-article {
+    border-bottom: 1px #efefef dotted;
+    padding: 15px 0;
+    margin: 0;
+}
+
+.post-image {
+    width: 30%;
+    float: left;
+    position: relative;
+}

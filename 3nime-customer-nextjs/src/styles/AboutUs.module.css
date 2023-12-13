@@ -1,0 +1,77 @@
+.about-head {
+    background: #f5f5f5;
+}
+
+.about-head-ul {
+    position: relative;
+    padding-left: 0;
+    margin-bottom: 0;
+
+}
+
+.about-head-li {
+    list-style: none;
+}
+
+.about-head-a {}
+
+.about-head-a,
+.about-head-span {
+    color: black;
+
+}
+
+.about-head-a:hover,
+.about-head-span:hover {
+    color: crimson;
+}
+
+.imageAbout {
+    position: relative;
+    min-width: 100%;
+    width: 100%;
+    min-height: 342px;
+    overflow: hidden;
+}
+
+.imageAbout1 {
+    position: relative;
+    min-height: 342px;
+    min-width: 400px;
+    display: flex;
+    margin: 0 auto;
+}
+
+/* aside  */
+.sidebar-page {}
+
+.group-sidebox {
+    margin: 0 0 30px;
+    position: relative;
+    padding: 20px 15px;
+    border: 1px solid #c0bdbd;
+}
+
+.sidebox {
+    border: 1px solid #c0bdbd;
+    padding: 0 15px;
+
+}
+
+.sidebox-content-togged {
+    display: block;
+}
+
+/* dropdownd */
+.mobile-dropdown {
+    cursor: pointer;
+}
+
+/* CSS cho màn hình nhỏ (Mobile) */
+.mobile-dropdown .navbar-nav {
+    display: none;
+}
+
+.mobile-dropdown .navbar-nav.active {
+    display: block;
+}

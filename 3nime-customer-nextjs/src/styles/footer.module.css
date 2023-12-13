@@ -1,0 +1,57 @@
+
+.footer_bg{
+    background-color: #ee2d7a;
+    color: #fff;
+    padding-top: 50px;
+}
+
+.footer_banner {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.gallery_item {
+    position: relative;
+}
+
+
+
+.groupbanner_hover{
+    max-width: 100%;
+}
+
+.lazyloaded {
+    max-width: 100%;
+}
+
+
+
+.color_3nime {
+    color: #f3bb69;
+}
+.footer_title {
+    text-transform: none;
+    font-size: 34px;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+
+.logo_icon {
+    font-size: 26px;
+    column-gap: 10px;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.phone_bigsize{
+    font-size: 26px;
+}
+
+.footer_bg_under{
+    border-top: 1px solid rgba(245, 242, 242, 0.08);;
+    background-color: #ee2d7a;
+    color: #eaedf0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

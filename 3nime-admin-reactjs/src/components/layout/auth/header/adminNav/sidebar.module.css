@@ -1,0 +1,22 @@
+.sidebar__bg{
+    background-image: var(--second-color);
+}
+
+.sidebar__title{
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.customOffcanvas{
+    width: 70%;
+}
+
+.navbar__width{
+    width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+    .navbar__width {
+        width: 75%;
+    }
+}

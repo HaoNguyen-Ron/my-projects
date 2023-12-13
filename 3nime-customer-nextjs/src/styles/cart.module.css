@@ -1,0 +1,115 @@
+.box_cart {
+    border: 1px solid #dfe0e1;
+    padding: 15px;
+    border-radius: 10px;
+}
+.border_bottom {
+    border-bottom: 1px dashed #dfe0e1;
+    padding-bottom: 15px;
+}
+.box_title_cart {
+    padding-top: 15px;
+}
+.title_cart {
+    position: relative;
+    font-size: 14px;
+    margin-bottom: 4px;
+    padding-left: 15px;
+    font-weight: 400;
+    text-align: left;
+    min-height: 40px;
+}
+.title_cart::before {
+    content: "";
+    width: 4px;
+    height: 4px;
+    background: #999999;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    top: 8px;
+    border-radius: 50%;
+}
+.checkout_btn {
+    display: block;
+    background: red;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 5px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 0;
+    margin-top: 12px;
+}
+
+.description_cart{
+    color: var(--main-color);
+}
+
+/*  sản phẩm */
+.title_number_cart {
+    background: #fafafa;
+    padding: 10px 15px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.title_number_border {
+    padding: 10px 0px;
+    border-bottom: 1px solid #f1f1f1;
+}
+.media_line_item {
+    /* padding: 10px 0px; */
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.media_left {
+    padding-right: 10px;
+    max-width: 100%;
+    box-sizing: border-box;
+
+}
+.media_left_a {
+    max-width: 100%;
+    box-sizing: border-box
+}
+.name_Product {
+    color: black;
+    font-weight: bold;
+}
+.image_number_cart {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.media_right {
+    padding-left: 16px;
+}
+.input_quantity {
+    max-width: 40px;
+    text-align: center;
+}
+.input_color {
+    color: #ee2d7a;
+    background-color: #d4d1d2;
+}
+.input_color:hover {
+    color: #fff;
+    background-color: #ee2d7a;
+}
+
+.title_ThanhTien {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input_color_1 {
+    color: #ee2d7a;
+}
+
+.input_color_2 {
+    font-size: 24px;
+}

@@ -1,0 +1,19 @@
+.css-4jnixx-MuiStack-root{
+    padding-top: 0px !important;
+}
+
+.css-4jnixx-MuiStack-root>.MuiTextField-root {
+    min-width: 0 !important;
+}
+
+@media (min-width: 1200px){
+    .css-4jnixx-MuiStack-root>:not(style):not(style) {
+        margin: 0;
+    }
+    .css-4jnixx-MuiStack-root {
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: column !important;
+    }
+
+}

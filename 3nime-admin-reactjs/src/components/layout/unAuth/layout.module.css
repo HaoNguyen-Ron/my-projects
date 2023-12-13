@@ -1,0 +1,33 @@
+.layout {
+    position: relative;
+}
+
+.layout__title {
+    color: var(--main-color);
+}
+
+.layout__item{
+    margin-bottom: 3px;
+    color: var(--main-color);
+}
+
+.layout__item:hover{
+    color: var(--hover-color);
+}
+
+.layoutContainer{
+   width: 700px;
+}
+
+.layout__btn{
+    background-color: var(--main-color);
+    color: white;
+}
+
+.layout__btn:hover{
+    background-color: var(--hover-color);
+}
+
+.layout__link{
+    color: white;
+}

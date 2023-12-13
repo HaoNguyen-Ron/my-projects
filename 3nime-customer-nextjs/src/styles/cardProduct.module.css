@@ -1,0 +1,124 @@
+
+.card_Product {
+    padding: 20px 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid #d4d1d2;
+}
+.caroshel {
+    position: relative;
+    width: 100%;
+}
+.info_product {
+    min-height: 800px;
+}
+.input_quantity {
+    max-width: 50px;
+    text-align: center;
+}
+
+.input_color {
+    color: #ee2d7a;
+    background-color: #d4d1d2;
+}
+.input_color:hover {
+    color: #fff;
+    background-color: #ee2d7a;
+}
+.box_mes {
+    min-height: 50px;
+    margin: 10px 0px;
+}
+.title_chat {
+    color: #ee2d7a;
+    font-weight: 500;  
+}
+.form_buy{
+    margin-bottom: 15px;
+}
+.btn_add_card {
+    display: inline-block;
+    min-height: 50px;
+    min-width: 150px;
+    color: #fff;
+    background-color: #ee2d7a;
+    border: 1px solid #ee2d7a;
+    border-radius: 4px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.btn_add_card:hover{
+    color: #ee2d7a;
+}
+.btn_add_card::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    z-index: -1;
+    transition:0.3s ease all;
+    transform: scale(0,1);
+
+    transform-origin: top right;
+    transition: transform 500ms cubic-bezier(0.86, 0, 0.07, 1);
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+}
+.btn_add_card:hover::after {
+    transform: scale(1,1);
+    transform-origin: top left;
+    color: red;
+}
+.infoList_deliverly{
+    margin-bottom: 15px;
+}
+.infoList_deliverly_item{
+    display: list-item;
+    text-align: -webkit-match-parent;
+    gap:25px;
+    font-weight: 400;
+    padding-bottom: 15px;
+}
+
+.infoList_deliverly_item:last-child {
+    border-bottom: 1px solid #cecbcb;
+}
+
+.infomation_product {
+    font-size: 20px;
+    cursor: pointer;
+    min-width: 178px;
+}
+.infomation_product:focus {
+    font-weight: bold;
+}
+
+.price_text {
+    font-size: 20px;
+    color: #838181;
+    text-decoration: line-through;
+}
+
+.price_text_discount {
+    font-size: 24px;
+    color: #ee2d7a;
+    font-weight: bold ;
+}
+.img_product {
+    position: relative;
+}
+
+.sale-span {
+    position: absolute;
+    top: 10px; /* Điều chỉnh vị trí từ phía trên */
+    right: 20px; /* Điều chỉnh vị trí từ phía bên trái */
+    background-color: red;
+    color: #eff2ff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    z-index: 1;
+  }

@@ -1,0 +1,14 @@
+.media_tablet{
+    display: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .media_pc{
+        display: none;
+    }
+
+    .media_tablet{
+        display: inline-block;
+    }
+  }

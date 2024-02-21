@@ -1,0 +1,253 @@
+.header-container {
+    background-color: #000;
+}
+
+.navbar_container {
+    background-color: #000;
+    padding: 0 150px;
+    height: 72px;
+}
+
+.logo_wrapper {
+    padding: 23px 0;
+}
+
+.logo_item {
+    font-size: 45px;
+}
+
+.navbar_wrapper {
+    font-size: 11px;
+}
+
+.navbar_item {
+    font-size: 14px;
+    margin-right: 48px;
+    position: relative;
+
+}
+
+.navbar_item:last-child {
+    margin-right: 0px
+}
+
+.login_container {
+    background-image: url(../images/signUpImage.png);
+    height: calc(713px - 72px);
+}
+
+.login_item_img {
+    width: 1400px;
+    height: 713px;
+    object-fit: cover;
+}
+
+.img_container {
+    padding: 0 150px;
+    width: 100%;
+}
+
+.img_container .left-content {
+    text-align: start;
+}
+
+.img_container .left-content p {
+    margin-bottom: 45px;
+    font-size: 16px;
+}
+
+.login_card {
+    max-width: 360px;
+    margin-top: 20px;
+}
+
+.login_card-header {
+    background-color: var(--color-third);
+    text-align: center;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    height: 54px;
+}
+
+.login_card-header b {
+    display: block;
+    margin: 0 auto;
+}
+
+.login_card-body {
+    padding: 0 45px;
+    background-color: white;
+}
+
+.login_card-input {
+    padding-bottom: 49px;
+    padding-top: 29px;
+    background-color: white;
+}
+
+.login_card-input input {
+    margin-bottom: 47px;
+}
+
+.login_card-input input:last-child {
+    margin-bottom: 0;
+}
+
+.login_card-button {
+    background-color: var(--color-primary);
+    width: 100%;
+    height: 54px;
+    border: none;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.tab_container {
+    padding: 150px;
+}
+
+.tab_button {
+    width: 112px;
+    height: 112px;
+    background-color: var(--color-secondary);
+    color: white;
+    line-height: 112px;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.5s ease;
+}
+
+.tab_button:hover {
+    background-color: var(--color-third);
+}
+
+.tab_button.active {
+    background-color: var(--color-primary);
+}
+
+.tab_content_list_wrapper {
+    padding: 0 100px;
+}
+
+.tab_content_list {
+    display: none;
+}
+
+.tab_content_list.active {
+    display: block;
+}
+
+.tab_content_list:not(.active) {
+    display: none;
+}
+
+.tab_content_list>p:nth-child(2) {
+    margin-top: 51px;
+}
+
+.tab_content_list>p:nth-child(3) {
+    margin-bottom: 51px;
+}
+
+.sub_section_container {
+    padding: 110px 150px;
+}
+
+.sub_section_image img {
+    width: 525px;
+    height: auto;
+}
+
+.sub_section_content .line-primary {
+    margin: 30px 0;
+}
+
+.sub_section_content {
+    padding-left: 130px;
+}
+
+.sub_section_content_list {
+    margin-top: 20px;
+}
+
+.sub_section_content_list_item {
+    margin-bottom: 20px;
+}
+
+.sub_section_content_list_icon i {
+    line-height: 35px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--color-primary);
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 30px;
+    font-size: 16px;
+}
+
+.sub_section_content_list_description b {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+body>div>main>section>div:nth-child(3)>div>div.sub_section_content {
+    padding-left: 0;
+    padding-right: 150px;
+}
+
+.article_container {
+    padding: 108px 150px;
+}
+
+.article_service {
+    margin-top: 80px;
+}
+
+.article_service_item i {
+    font-size: 32px;
+    line-height: 65px;
+    width: 70px;
+    height: 70px;
+    border: 3px solid var(--color-primary);
+    border-radius: 50%;
+    text-align: center;
+}
+
+.aside_container {
+    background-image: url(../images/banner.png);
+    width: 100%;
+    padding: 60px 150px;
+}
+
+.contact_container {
+    padding: 80px 150px;
+    text-align: center;
+}
+
+.contact_container .login_card-input .left-content,
+.contact_container .login_card-input .right-content {
+    padding: 20px 0;
+}
+
+.contact_container .login_card-input .right-content {
+    padding-left: 40px;
+}
+
+.contact_container .login_card-input .left-content {
+    padding-right: 40px;
+}
+
+.footer_container {
+    padding: 20px;
+}
+
+.footer_icon i {
+    font-size: 25px;
+    color: white;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.footer_icon i:hover {
+    color: var(--color-primary);
+}

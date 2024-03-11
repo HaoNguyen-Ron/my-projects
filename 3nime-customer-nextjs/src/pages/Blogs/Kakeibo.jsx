@@ -258,7 +258,7 @@ function Kakeibo(props) {
                 </figure>
               </div>
             </aside>
-            <aside class={pay["side"]}>
+            <aside className={pay["side"]}>
               {/* phần bài viết mới */}
               <div
                 className={`${pay["group-sidebox"]} ${

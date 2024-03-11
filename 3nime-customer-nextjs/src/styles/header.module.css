@@ -1,14 +1,21 @@
-.media_tablet{
+.media_tablet,
+.media_mobile {
     display: none;
 }
 
 
 @media only screen and (max-width: 768px) {
-    .media_pc{
+    .media_pc {
         display: none;
     }
 
-    .media_tablet{
+    .media_tablet {
         display: inline-block;
     }
-  }
+}
+
+@media only screen and (max-width: 768px) {
+    .media_mobile {
+        display: block;
+    }
+}

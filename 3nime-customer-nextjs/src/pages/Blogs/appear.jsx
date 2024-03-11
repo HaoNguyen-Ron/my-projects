@@ -4,6 +4,7 @@ import abo from "@/styles/AboutUs.module.css";
 import pay from "@/styles/Payment.module.css";
 import Link from "next/link";
 import Social from "@/components/social";
+import Image from "next/image";
 
 function Appper(props) {
   const [isNavVisible, setNavVisible] = useState(false);
@@ -36,19 +37,15 @@ function Appper(props) {
     setIsCategoryOpen(!isCategoryOpen);
   };
 
-  const toggleCategory2 = () => {
-    setIsCategoryOpen2(!isCategoryOpen2);
-  };
-
   return (
     <div>
       <div className="container">
         <div className="row">
-          <div className=" text-center">
-            <img
+          <div>
+            <img 
               src="https://theme.hstatic.net/1000160337/1000885200/14/blogs_banner_paralax.jpg?v=341"
               alt=""
-              style={{ maxWidth: "100%" }}
+              className={`${x["image_width"]} text-center`}
             />
           </div>
           <div className="col-lg-9 col-sm-12 col-xs-12">
@@ -56,7 +53,7 @@ function Appper(props) {
               <h1>Khi nào 1 figure &ldquo;CÓ&rdquo; tại Nhật Bản?</h1>
             </div>
             <div className="contentAboutusDetail">
-              <div className={`${x["imageAbout"]} text-center`}>
+              <div className={` ${x["image_width"]}`}>
                 <img
                   src="http://file.hstatic.net/1000160337/article/vi_sao_nen_dat_hang_som_tai_japanfigure.jpg"
                   alt=""
@@ -107,8 +104,8 @@ function Appper(props) {
                   của 1 nhân vật trong 1 khoảng thời gian giới hạn <br /> đủ số
                   lượng thị trường cần. <br />
                   <b style={{ color: "red" }}>
-                    &ldquo;Chúng tôi mở bán từ tháng X đến tháng Y Bạn đặt bao nhiêu,
-                    hãng làm bấy nhiêu, rồi ngưng.&rdquo;
+                    &ldquo;Chúng tôi mở bán từ tháng X đến tháng Y Bạn đặt bao
+                    nhiêu, hãng làm bấy nhiêu, rồi ngưng.&rdquo;
                   </b>
                 </p>
 
@@ -129,10 +126,10 @@ function Appper(props) {
                   Bạn đồng ý chứ? Từ lẽ hiển nhiên này, những figure nào không
                   còn sản xuất nữa, sẽ hiếm dần mỗi ngày, mỗi tháng. <br />
                   <b style={{ color: "red" }}>
-                    VÀ GIÁ CỦA &ldquo;ANH ĐÓ&rdquo;, &ldquo;EM ĐÓ&rdquo;, &ldquo;BÉ ĐÓ&rdquo;, &ldquo;CON FIGURE ĐÓ&rdquo; SẼ
-                    TĂNG DẦN THEO THỜI GIAN.
+                    VÀ GIÁ CỦA &ldquo;ANH ĐÓ&rdquo;, &ldquo;EM ĐÓ&rdquo;,
+                    &ldquo;BÉ ĐÓ&rdquo;, &ldquo;CON FIGURE ĐÓ&rdquo; SẼ TĂNG DẦN
+                    THEO THỜI GIAN.
                   </b>
-
                 </p>
 
                 <p>
@@ -140,9 +137,9 @@ function Appper(props) {
                   <br />
                   <span>
                     không còn cho &ldquo;đặt hàng trước&rdquo; nữa, <br />
-                    đồng nghĩa là bạn chỉ có thể sở hữu figure đó bằng cách <br />
+                    đồng nghĩa là bạn chỉ có thể sở hữu figure đó bằng cách{" "}
+                    <br />
                   </span>
-
                   <b style={{ color: "green" }}>
                     {" "}
                     -mua lại hàng mới từ những người đã nhanh tay đặt hàng từ
@@ -183,6 +180,7 @@ function Appper(props) {
                   <img
                     src="//file.hstatic.net/1000160337/file/quy_trinh_dat_hang-01-01.jpg"
                     alt=""
+                    className={`${x["image_width"]} text-center`}
                   />
                 </p>
 
@@ -202,8 +200,9 @@ function Appper(props) {
                   >
                     Danh mục
                     <span
-                      className={`fa fa-angle-${isNavVisible ? "up" : "down"
-                        } d-block d-lg-none position-absolute`}
+                      className={`fa fa-angle-${
+                        isNavVisible ? "up" : "down"
+                      } d-block d-lg-none position-absolute`}
                       style={{
                         fontSize: "18px",
                         right: "0",
@@ -215,8 +214,9 @@ function Appper(props) {
                   className={`d-lg-block ${isNavVisible ? "block" : "none"}`}
                 >
                   <ul
-                    className={`${abo["about-head-ul"]} ${isNavVisible ? "d-none" : "d-lg-block"
-                      }`}
+                    className={`${abo["about-head-ul"]} ${
+                      isNavVisible ? "d-none" : "d-lg-block"
+                    }`}
                   >
                     <li className={`${abo["about-head-li"]} border-top py-2`}>
                       <Link
@@ -244,22 +244,26 @@ function Appper(props) {
               <div className="group-sidebox-banner">
                 <figure className="mb-0 mt-4">
                   <a className={`${abo["about-head-a"]}`} href="#">
-                    <img
-                      className="position-static"
+                    <Image
+                      className="position-static text-center"
+                      style={{ width: "100%" }}
                       src="/assets/images/about_sibar.jpg"
                       alt="about-side"
-                      layout="fill"
-                      objectFit="cover"
+                      // objectFit="cover"
+                      priority
+                      width={215}
+                      height={150}
                     />
                   </a>
                 </figure>
               </div>
             </aside>
-            <aside class={pay["side"]}>
+            <aside className={pay["side"]}>
               {/* phần bài viết mới */}
               <div
-                className={`${pay["group-sidebox"]} ${isMdScreen ? "active" : isCategoryOpen ? "active" : ""
-                  }`}
+                className={`${pay["group-sidebox"]} ${
+                  isMdScreen ? "active" : isCategoryOpen ? "active" : ""
+                }`}
               >
                 <div
                   className={`${pay["sidebox-title"]}`}
@@ -268,8 +272,9 @@ function Appper(props) {
                   <h3 className={`${pay["htitle"]} d-flex align-items-center`}>
                     Bài viết mới nhất
                     <span
-                      className={`fa ${isCategoryOpen ? "fa-angle-up" : "fa-angle-down"
-                        } d-block d-md-none position-absolute`}
+                      className={`fa ${
+                        isCategoryOpen ? "fa-angle-up" : "fa-angle-down"
+                      } d-block d-md-none position-absolute`}
                       style={{ right: "0" }}
                     />
                   </h3>
@@ -277,12 +282,14 @@ function Appper(props) {
 
                 {/* phần content bài viết */}
                 <div
-                  className={`${pay["sidebox-content "]} ${isMdScreen || isCategoryOpen ? "d-md-block" : "d-none"
-                    }`}
+                  className={`${pay["sidebox-content "]} ${
+                    isMdScreen || isCategoryOpen ? "d-md-block" : "d-none"
+                  }`}
                 >
                   <ul
-                    className={`${pay["menuList-links"]} ${isMdScreen || isCategoryOpen ? "d-md-block" : "d-none"
-                      }`}
+                    className={`${pay["menuList-links"]} ${
+                      isMdScreen || isCategoryOpen ? "d-md-block" : "d-none"
+                    }`}
                   >
                     <BlogItem
                       image="https://file.hstatic.net/1000160337/article/vi_sao_nen_dat_hang_som_tai_japanfigure.jpg"

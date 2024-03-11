@@ -22,30 +22,30 @@ export default function Header() {
             if (token) setIsLogged(true)
         }
 
-    },[]);
+    }, [router.isReady]);
 
-    return (    
+    return (
         <>
             <header>
                 <div className="container-fluid">
                     <div className={`d-flex justify-content-center align-items-center align-self-center row`}>
-                        <div className={`col-xs-12 col-2 col-md-1 col-lg-2 ${styles.media_tablet}`}>
-                            <NavTablet />
-                        </div>
-
-                        <div className='col-xs-12 col-6 col-md-8 col-lg-2'>
+                        <div className='col-12 col-md-12 col-lg-2'>
                             <Logo />
                         </div>
 
-                        <div className={`col-xs-12 col-4 col-md-2 col-lg-2 ${styles.media_tablet}`}>
+                        <div className={`col-6 d-block d-lg-none`}>
+                            <NavTablet />
+                        </div>
+
+                        <div className={`col-6 d-block d-lg-none`}>
                             {isLogged ? <AuthLoginPartTablet /> : <LoginPartTablet />}
                         </div>
 
-                        <div className='col-xs-12 col-sm-12 col-md-12 col-lg-7 d-flex justify-content-center align-items-center'>
+                        <div className='col-12 col-sm-12 col-md-12 col-lg-7 d-flex justify-content-center align-items-center'>
                             <SearchBar />
                         </div>
 
-                        <div className={`col-sm-12 col-md-2 col-lg-3`}>
+                        <div className={`col-sm-12 col-md-2 col-lg-3 d-none d-lg-block`}>
                             {isLogged ? <AuthLoginPartPc /> : <LoginPartPc />}
                         </div>
 

@@ -26,9 +26,8 @@ export default function SearchBarInput({
     }
   };
 
-  const handalBlur = () => {
-    if(searchList === null)
-    setIsSearched(false)
+  const handleSearchButton = () => {
+    
   }
   return (
     <div
@@ -37,7 +36,6 @@ export default function SearchBarInput({
       onMouseLeave={onMouseLeave}
     >
       <input
-        onBlur={handalBlur}
         type="text"
         className={`form-control ${styles.searchbar}`}
         placeholder="Tìm kiếm sản phẩm ở đây nè !..."
@@ -48,6 +46,7 @@ export default function SearchBarInput({
 
       <button
         className={`btn btn-outline-secondary ${styles.searchbar_btn}`}
+        onClick={handleSearchButton}
         type="button"
         id="button-addon2"
         // onClick={handalToSearchPage}

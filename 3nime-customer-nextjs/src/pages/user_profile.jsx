@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import styles from "@/styles/userPage.module.css";
 import UserDetail from "@/components/UserProfile/UserDetail";
@@ -36,27 +36,32 @@ function UserProfilePage() {
     setGetPassword(true);
   };
 
-  const getUserDetail = async () => {
-    try {
-      const res = await axiosClient.get("/auth/profile");
+  const getUserDetail = useCallback(
+    async () => {
+      try {
+        const res = await axiosClient.get("/auth/profile");
 
-      if (res.status === 200 && router.isReady === true) {
-        const data = res.data.payload;
-        setUser(data);
+        if (res.status === 200 && router.isReady === true) {
+          const data = res.data.payload;
+          setUser(data);
+        }
+      } catch (error) {
+        console.log("««««« error »»»»»", error);
       }
-    } catch (error) {
-      console.log("««««« error »»»»»", error);
-    }
-  };
+    },
+    [router.isReady],
+  )
+
   useEffect(() => {
     const token = window.localStorage.getItem("TOKEN");
     if (token) {
       axiosClient.defaults.headers.Authorization = `Bearer ${token}`;
       getUserDetail();
     }
-  }, []);
+  }, [getUserDetail]);
+
   return (
-    <div className="container mb-5" style={{ height: "100%", minHeight:'300px' }}>
+    <div className="container mb-5" style={{ height: "100%", minHeight: '300px' }}>
       <h1 className={`text-center ${styles.user__title}`}>Tài khoản của bạn</h1>
 
       <div className="user-wrapper d-block d-lg-flex row">

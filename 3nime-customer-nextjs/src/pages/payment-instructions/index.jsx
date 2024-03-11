@@ -863,7 +863,7 @@ function PaymentInstructions(props) {
             <div
               className={`col-md-3 col-sm-12 col-xs-12 mb-5 ${pay["article-post-meta"]}`}
             >
-              <aside class={pay["side"]}>
+              <aside className={pay["side"]}>
                 {/* phần bài viết mới */}
                 <div
                   className={`${pay["group-sidebox"]} ${

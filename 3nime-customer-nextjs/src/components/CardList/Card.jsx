@@ -47,13 +47,24 @@ function Card({ products, handleAddToCart, id }) {
                     </div>
                   </div>
                   <div className={`${x["proloop-detail"]}`}>
-                    <h3 className={`${x["quickview-product"]}`}>
-                      {/* onChange={() => handleGoToProductDetail(products.id)}  */}
-                      <a href={id} className={`${x["quickview-product"]}`}>
-                        {products.name}
-                      </a>
-                    </h3>
-                    <p className={`${x["proloop--price"]}`}>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <h3
+                        className={`${x["quickview-product"]}`}
+                      >
+                        <a href={id} className={`${x["quickview-product"]}`}>
+                          {products.name}
+                        </a>
+                      </h3>
+                      <button
+                        onClick={() => handleAddToCart(products)}
+                        className={` d-block d-md-block d-lg-none ${x["btn_add_card-mini"]}`}
+                      >
+                        <i className="fa-solid fa-cart-shopping"></i>
+                      </button>
+                    </div>
+                    <p
+                      className={`justify-content-between ${x["proloop--price"]}`}
+                    >
                       {products.discount === 0 ? (
                         <></>
                       ) : (

@@ -23,23 +23,26 @@ function Collection({ products }) {
         router.push("/login");
       } else {
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        console.log('««««« cart »»»»»', cart);
         const updatedCart = [...cart];
         const existingProductIndex = updatedCart.findIndex(
           (item) => item._id === selectedProduct._id
         );
 
         if (existingProductIndex !== -1) {
-          // If the product is already in the cart, increment the count
-          updatedCart[existingProductIndex].quantity += 1;
+          if (
+            updatedCart[existingProductIndex].quantity < selectedProduct.stock
+          ) {
+            alert(" đã thêm sản phẩm vào giỏ hàng.");
+            updatedCart[existingProductIndex].quantity += 1;
+          } else {
+            alert(" đã hết sản phẩm.");
+            return;
+          }
         } else {
-          // If the product is not in the cart, add it with count 1
           updatedCart.push({ ...selectedProduct, quantity: 1 });
+          alert(" đã thêm sản phẩm vào giỏ hàng.");
         }
-
-        // Set the updated cart in state
-        // setCart(updatedCart);
-
-        // Store the updated cart in local storage
         localStorage.setItem("cart", JSON.stringify(updatedCart));
       }
     }
@@ -212,17 +215,17 @@ function Collection({ products }) {
         <div className="container">
           <div className="row">
             {filteredProducts.length > 0 ? (
-              filteredProducts.map((product) => (
-                <div className="col-md-3 col-sm-4 col-xs-6" key={product._id}>
-                  {/* {console.log("Dữ liệu Sản phẩm:", product)} */}
-                  <Card
-                    id={`/productDetail/${product._id}`}
-                    products={product}
-                    handleAddToCart={handleAddToCart}
-                    // handleGoToProductDetail={handleGoToProductDetail}
-                  />
-                </div>
-              ))
+              filteredProducts.map((product) =>
+                product.stock > 0 ? (
+                  <div className="col-md-3 col-sm-4 col-xs-6" key={product._id}>
+                    <Card
+                      id={`/productDetail/${product._id}`}
+                      products={product}
+                      handleAddToCart={handleAddToCart}
+                    />
+                  </div>
+                ) : null
+              )
             ) : (
               <p>Không có sản phẩm nào</p>
             )}

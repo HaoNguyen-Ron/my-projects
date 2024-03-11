@@ -34,13 +34,13 @@ export default function AuthLoginPartTablet() {
 
   const handleLogout = () => {
     if (typeof window !== "undefined") {
-      localStorage.clear("TOKEN","REFRESH-TOKEN")
+      localStorage.clear("TOKEN", "REFRESH-TOKEN")
       router.reload()
     }
   }
 
   return (
-    <div className={` ${styles.media_tablet} d-flex justify-content-end`}>
+    <div className={`d-flex justify-content-end`}>
       <div>
         <Link href={'/cart'} className={`position-relative btn ${styles.loginPart__item}`}>
           <i className='fa-solid fa-cart-shopping my-auto me-2 ' style={{ fontSize: '20px' }}></i>

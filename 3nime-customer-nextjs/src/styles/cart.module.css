@@ -32,7 +32,7 @@
 }
 .checkout_btn {
     display: block;
-    background: red;
+    background: var(--main-color);
     color: #fff;
     text-decoration: none;
     text-transform: uppercase;

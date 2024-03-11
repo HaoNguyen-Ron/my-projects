@@ -106,7 +106,7 @@ function Footer() {
       </div>
 
       <div
-        className={`d-none d-md-flex d-lg-flex justify-content-center align-item-center ${styles.footer_bg}`}
+        className={`d-md-flex d-lg-flex justify-content-center align-item-center ${styles.footer_bg}`}
       >
         <div className="container">
           <div className="row">

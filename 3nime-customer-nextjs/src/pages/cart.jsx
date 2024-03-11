@@ -34,11 +34,14 @@ function Cart() {
   };
 
   const incrementCount = (productId) => {
-    const updatedData = data.map((item) =>
-      item._id === productId ? { ...item, quantity: item.quantity + 1 } : item
-    );
-
-    // Update state and local storage with the new data
+    const updatedData = data.map((item) => {
+      if (item._id === productId) {
+        const newQuantity = item.quantity + 1;
+        const maxQuantity = Math.min(newQuantity, item.stock);
+        return { ...item, quantity: maxQuantity };
+      }
+      return item;
+    });
     setData(updatedData);
     localStorage.setItem("cart", JSON.stringify(updatedData));
   };
@@ -52,14 +55,16 @@ function Cart() {
   };
 
   const updateCount = (productId, newCount) => {
-    // If newCount is not a number or is less than 1, set it to 1
     const countToUpdate = isNaN(newCount) || newCount < 1 ? 1 : newCount;
-
-    const updatedData = data.map((item) =>
-      item._id === productId ? { ...item, quantity: countToUpdate } : item
-    );
-
-    // Update state and local storage with the new data
+  
+    const updatedData = data.map((item) => {
+      if (item._id === productId) {
+        const updatedQuantity = Math.min(Math.max(countToUpdate, 1), item.stock);
+        return { ...item, quantity: updatedQuantity };
+      }
+      return item;
+    });
+  
     setData(updatedData);
     localStorage.setItem("cart", JSON.stringify(updatedData));
   };
@@ -81,7 +86,7 @@ function Cart() {
 
       <div className="container">
         <div className="row">
-          <div className="col-8">
+          <div className="col-12 col-md-8 col-lg-8">
             {data.length > 0 ? (
               <>
                 <p className={`${Styles.title_number_cart}`}>
@@ -165,7 +170,7 @@ function Cart() {
             )}
           </div>
 
-          <div className="col-4">
+          <div className="col-12 col-md-4 col-lg-4">
             <div className={`${Styles.box_cart}`}>
               <h2
                 className={`${Styles.border_bottom} ${Styles.description_cart}`}
@@ -174,7 +179,7 @@ function Cart() {
               </h2>
 
               <div
-                className={`d-flex justify-content-between ${Styles.title_ThanhTien} ${Styles.border_bottom}`}
+                className={`d-flex d-md-block d-lg-flex justify-content-between ${Styles.title_ThanhTien} ${Styles.border_bottom}`}
               >
                   <p className={`${Styles.input_color_2}`}><b>Tổng tiền:</b></p>
                   <p className={`${Styles.input_color_2} ${Styles.input_color_1}`}><b>{formattedPrice(totalPrice)}</b></p>

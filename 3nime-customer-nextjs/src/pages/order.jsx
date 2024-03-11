@@ -22,6 +22,7 @@ function Order() {
   const [openSuccess, setOpenSuccess] = useState(false);
   const [openEdit, setOpenEdit] = useState(false);
   const [openError, setOpenError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const style = {
     position: 'absolute',
@@ -82,6 +83,7 @@ function Order() {
     onSubmit: async (values) => {
       console.log('««««« values »»»»»', values);
       try {
+        setLoading(true)
         const res = await axiosClient.post("/orders/", values);
 
         if (res.status === 200) {
@@ -97,6 +99,9 @@ function Order() {
       } catch (error) {
         setOpenError(true)
         console.error("Submission error:", error);
+      }
+      finally {
+        setLoading(false);
       }
     },
   });
@@ -132,7 +137,7 @@ function Order() {
     const parsedData = storedData ? JSON.parse(storedData) : [];
 
     setListProduct(parsedData);
-  }, []);
+  }, [router.isReady]);
 
   return (
     <div className="container p-5">
@@ -204,6 +209,7 @@ function Order() {
                   <hr />
 
                   <CustomerEditForm userData={userData} />
+                  
                 </div>
 
               </Box>
@@ -244,6 +250,7 @@ function Order() {
             <button
               className={`${styles.user__btn} btn`}
               type="submit"
+              disabled={loading}
               onClick={() => {
                 validation.handleSubmit();
                 validation.setFieldValue("customerId", userData._id);

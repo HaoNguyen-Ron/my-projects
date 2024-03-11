@@ -23,27 +23,31 @@ function CardList(products) {
         router.push("/login");
       } else {
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        console.log('««««« cart »»»»»', cart);
         const updatedCart = [...cart];
         const existingProductIndex = updatedCart.findIndex(
           (item) => item._id === selectedProduct._id
         );
 
         if (existingProductIndex !== -1) {
-          // If the product is already in the cart, increment the count
-          updatedCart[existingProductIndex].quantity += 1;
+          if (
+            updatedCart[existingProductIndex].quantity < selectedProduct.stock
+          ) {
+            alert(" đã thêm sản phẩm vào giỏ hàng.");
+            updatedCart[existingProductIndex].quantity += 1;
+          } else {
+            alert(" đã hết sản phẩm.");
+            return;
+          }
         } else {
-          // If the product is not in the cart, add it with count 1
           updatedCart.push({ ...selectedProduct, quantity: 1 });
+          alert(" đã thêm sản phẩm vào giỏ hàng.");
         }
-
-        // Set the updated cart in state
-        // setCart(updatedCart);
-
-        // Store the updated cart in local storage
         localStorage.setItem("cart", JSON.stringify(updatedCart));
       }
     }
   };
+
   useEffect(() => {
     function shuffleArray(array) {
       for (let i = array.length - 1; i > 0; i--) {
@@ -70,24 +74,23 @@ function CardList(products) {
 
     setSelectedProducts(shuffledWithDiscountRandom);
   }, []);
+
   return (
     <div>
       <div className="container">
         <div className="row">
-          <div className="col-md-6 col-sm-6 col-xs-12 ">
+          <div className="col-12 col-sm-12 col-md-6">
             <Banner
               image="https://theme.hstatic.net/1000160337/1000885200/14/categorybanner_1_img.jpg?v=316"
-              caption="Dòng chibi figure được yêu thích nhất,
-                  nhiều gương mặt, thoả sức tạo dáng"
+              caption="Dòng chibi figure "
               title="COMMING SOON"
               name="Nendoroid"
             />
           </div>
-          <div className="col-md-6 col-sm-6 col-xs-12 ">
+          <div className="col-12 col-sm-12 col-md-6">
             <Banner
-              image="https://theme.hstatic.net/1000160337/1000885200/14/categorybanner_1_img.jpg?v=316"
-              caption="Dòng scale figure kích thước sinh viên,
-                     giá tiểu học"
+              image="https://theme.hstatic.net/1000160337/1000885200/14/categorybanner_2_img.jpg?v=341"
+              caption="Dòng scale figure "
               title="COMMING SOON"
               name="Pop Up Parade"
             />
@@ -116,18 +119,20 @@ function CardList(products) {
             </div>
           </div>
 
-          <div className="col-12 col-md-12 col-lg-8">
+          <div className="col-12 col-md-12 col-lg-8 mt-3">
             <div className="d-flex row">
-              {selectedProductsNotDiscount.map((product) => (
-                <div className="col-6 col-md-4 col-lg-3" key={product._id}>
-                  <Card
-                    id={`/productDetail/${product._id}`}
-                    products={product}
-                    handleAddToCart={handleAddToCart}
-                    handleGoToProductDetail={handleGoToProductDetail}
-                  />
-                </div>
-              ))}
+              {selectedProductsNotDiscount.map((product) =>
+                product.stock > 0 ? (
+                  <div className="col-6 col-md-4 col-lg-3" key={product._id}>
+                    <Card
+                      id={`/productDetail/${product._id}`}
+                      products={product}
+                      handleAddToCart={handleAddToCart}
+                      handleGoToProductDetail={handleGoToProductDetail}
+                    />
+                  </div>
+                ) : null
+              )}
             </div>
           </div>
         </div>
@@ -154,18 +159,20 @@ function CardList(products) {
             </div>
           </div>
 
-          <div className="col-12 col-md-12 col-lg-8">
+          <div className="col-12 col-md-12 col-lg-8 mt-3">
             <div className="d-flex row">
-              {selectedProducts.map((product) => (
-                <div className="col-6 col-md-4 col-lg-3" key={product._id}>
-                  <Card
-                    id={`/productDetail/${product._id}`}
-                    products={product}
-                    handleAddToCart={handleAddToCart}
-                    handleGoToProductDetail={handleGoToProductDetail}
-                  />
-                </div>
-              ))}
+              {selectedProducts.map((product) =>
+                product.stock > 0 ? (
+                  <div className="col-6 col-md-4 col-lg-3" key={product._id}>
+                    <Card
+                      id={`/productDetail/${product._id}`}
+                      products={product}
+                      handleAddToCart={handleAddToCart}
+                      handleGoToProductDetail={handleGoToProductDetail}
+                    />
+                  </div>
+                ) : null
+              )}
             </div>
           </div>
         </div>

@@ -588,6 +588,15 @@
     opacity: 1;
   }
 }
+.btn_add_card-mini {
+  min-height: 30%;
+  min-width: 30%;
+  color: #fff;
+  background-color: #ee2d7a;
+  border: 1px solid #ee2d7a;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
 
 .btn_add_card {
   display: inline-block;

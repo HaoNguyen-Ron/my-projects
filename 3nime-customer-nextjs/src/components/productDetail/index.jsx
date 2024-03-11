@@ -18,6 +18,7 @@ export default function CardProduct({ products }) {
 
   const priceThenDiscount =
     products.price - (products.price * products.discount) / 100;
+ 
   const handleAddToCart = () => {
     if (router.isReady === true) {
       const checkForToken = localStorage.getItem("TOKEN");
@@ -25,21 +26,32 @@ export default function CardProduct({ products }) {
         router.push("/login");
       } else {
         const { products: omitProducts, ...rest } = products;
-
         const productWithoutCircularRefs = { ...rest };
-
+  
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
         const existingProductIndex = cart.findIndex(
           (item) => item._id === products._id
         );
-
+  
         if (existingProductIndex !== -1) {
-          cart[existingProductIndex].quantity += count;
+          const totalQuantity = cart[existingProductIndex].quantity + count;
+          if (totalQuantity > products.stock) {
+            alert(" đã hết sản phẩm.");
+          }else {
+            cart[existingProductIndex].quantity = totalQuantity;
+            alert(" đã thêm sản phẩm vào giỏ hàng.");
+          }
         } else {
+          if (count > products.stock) {
+            alert(" đã thêm sản phẩm vào giỏ hàng.");
+          }
           const newProduct = { ...productWithoutCircularRefs, quantity: count };
           cart.push(newProduct);
-        }
+          alert(" đã thêm sản phẩm vào giỏ hàng.");
+  
 
+        }
+  
         localStorage.setItem("cart", JSON.stringify(cart));
       }
     }
@@ -50,9 +62,12 @@ export default function CardProduct({ products }) {
   }
 
   function increment() {
-    setCount(count + 1);
+    if (count < products.stock) {
+      setCount(count + 1);
+    } else {
+      setCount(count);
+    }
   }
-
   // Hàm giảm giá trị xuống 1
   function decrement() {
     if (count > 1) {
@@ -60,9 +75,13 @@ export default function CardProduct({ products }) {
     } else setCount(count);
   }
   const handleChange = (e) => {
-    setCount(Number(e.target.value));
+    let value = Number(e.target.value);
+    if (isNaN(value)) {
+      value = 1; // Set to a default value if not a number
+    }
+    value = Math.max(1, Math.min(value, products.stock));
+    setCount(value);
   };
-
   return (
     <div className={`container d-block `}>
       <div className={`row justify-content-around  ${Styles.card_Product} `}>
@@ -111,6 +130,7 @@ export default function CardProduct({ products }) {
                 type="text"
                 id="quantity"
                 name="quantity"
+                max={products.stock}
                 value={count}
                 onChange={handleChange}
                 className={`col-3 form-control ${Styles.input_quantity}`}

@@ -76,3 +76,6 @@
   display: block;
 }
 
+.image_width {
+  max-width: 100% !important;
+}

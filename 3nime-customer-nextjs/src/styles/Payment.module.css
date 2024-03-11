@@ -7,11 +7,11 @@
 .payment-content-pc {}
 
 .imageAbout {
-    position: relative;
+    position  : relative;
     min-height: auto;
-    width: 100%;
-    max-width: 600px;
-    overflow: hidden;
+    width     : 100%;
+    max-width : 600px;
+    overflow  : hidden;
 }
 
 .tag {
@@ -19,17 +19,17 @@
 }
 
 .group-sidebox {
-    margin: 0 0 30px;
+    margin  : 0 0 30px;
     position: relative;
-    padding: 20px 15px;
-    border: 1px solid #ccc;
+    padding : 20px 15px;
+    border  : 1px solid #ccc;
 }
 
 .group-sidebox .sidebox-title .htitle {
-    font-size: 18px;
+    font-size    : 18px;
     margin-bottom: 0;
-    position: relative;
-    cursor: pointer;
+    position     : relative;
+    cursor       : pointer;
 }
 
 .group-sidebox .sidebox-content {
@@ -38,22 +38,22 @@
 
 .item-article {
     /* justify-content: center; */
-    align-items: center;
+    align-items  : center;
     border-bottom: 1px #efefef dotted;
-    padding: 10px 0;
-    margin: 0;
+    padding      : 10px 0;
+    margin       : 0;
 }
 
 .lazyloaded {
-    width: 55px;
+    width : 55px;
     height: 55px;
 }
 
 .fs14 {
-    display: -webkit-box;
-    font-size: 14px;
-    white-space: initial;
-    overflow: hidden;
+    display           : -webkit-box;
+    font-size         : 14px;
+    white-space       : initial;
+    overflow          : hidden;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
@@ -68,28 +68,28 @@
 
 .side {
     position: sticky;
-    top: 10px;
+    top     : 10px;
 }
 
 .htitle {
     position: relative;
-    width: 100%;
+    width   : 100%;
 }
 
 /* CSS cho danh mục tổng quan */
 .group-sidebox {
-    border: 1px solid #ccc;
+    border : 1px solid #ccc;
     padding: 10px;
 }
 
 /* CSS cho tiêu đề danh mục */
 .sidebox-title {
     background-color: #f0f0f0;
-    padding: 10px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding         : 10px;
+    cursor          : pointer;
+    display         : flex;
+    justify-content : space-between;
+    align-items     : center;
 }
 
 .sidebox-title .fa {

@@ -1,31 +1,46 @@
 .form {
     position: relative;
 }
-.form__item{
+
+.form__item {
     margin-bottom: 3px;
-    color: var(--main-color);
+    color        : var(--main-color);
 }
-.form__item:hover{
+
+.form__item:hover {
     color: var(--hover-color);
 }
 
-.formContainer{
+.formContainer {
     max-width: 700px;
 }
 
-.modal__btn{
+.modal__btn {
     background-color: var(--main-color);
-    color: white;
+    color           : white;
 }
 
-.modal__btn:hover{
+.modal__btn:hover {
     background-color: var(--hover-color);
 }
 
-.modal__link{
+.modal__link {
     color: white;
 }
 
-.form__height{
-   min-height: 300px;
+.form__height {
+    min-height: 300px;
+}
+
+/* eye show */
+.input-group-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position : absolute;
+    top      : 40%;
+    right    : 10px;
+    transform: translateY(-50%);
+    cursor   : pointer;
 }

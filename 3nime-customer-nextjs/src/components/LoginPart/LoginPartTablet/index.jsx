@@ -17,7 +17,7 @@ export default function LoginPartTablet() {
   };
 
   return (
-    <div className={` ${styles.media_tablet} d-flex justify-content-end`}>
+    <div className={`d-flex justify-content-end`}>
       <Button
         id="demo-positioned-button"
         aria-controls={open ? 'demo-positioned-menu' : undefined}
@@ -42,7 +42,7 @@ export default function LoginPartTablet() {
           horizontal: 'center',
         }}
       >
-        <MenuItem  onClick={handleClose}>
+        <MenuItem onClick={handleClose}>
           <Link className={styles.loginPart__title} href={'/register'}>Đăng kí</Link>
         </MenuItem>
         <MenuItem onClick={handleClose}>

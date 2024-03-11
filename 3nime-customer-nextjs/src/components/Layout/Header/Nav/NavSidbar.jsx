@@ -1,64 +1,60 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 
-function NavSidbar({classDNone,activeTab, title ,submenutab, onClick,titlemenu1,titlemenu2,titlemenu3,titlemenu4,titlemenu5,titlemenu6 , a_href , a_href1,a_href2,a_href3,a_href4}) {
-    const router = useRouter();
-    // console.log('««««« sosanh »»»»»', router.pathname === a_href);
-    return (
-        <>
-        <li
-          onClick={() => onClick(router.pathname)}
-          className={`${classDNone} nav-item  ${
-            a_href === activeTab || a_href1 === activeTab ? "active-colors" : ""
+function NavSidbar({ classDNone, activeTab, title, submenutab, onClick, titlemenu1, titlemenu2, titlemenu3, titlemenu4, titlemenu5, titlemenu6, a_href, a_href1, a_href2, a_href3, a_href4 }) {
+  const router = useRouter();
+  return (
+    <>
+      <li
+        onClick={() => onClick(router.pathname)}
+        className={`${classDNone} nav-item  ${a_href === activeTab || a_href1 === activeTab ? "active-colors" : ""
           }`}
+      >
+        <a
+          href={a_href}
+          className={`nav-link ${a_href === activeTab || a_href1 === activeTab ? "active-colors" : ""
+            }`}
+          aria-current="page"
+          id="navbarDropdown"
+          role="button"
         >
-          <a
-            href={a_href}
-            className={`nav-link ${
-            a_href === activeTab || a_href1 === activeTab  ? "active-colors" : ""
-          }`}
-            aria-current="page"
-            id="navbarDropdown"
-            role="button"
-          >
-            {title}
-          </a>
-          {submenutab && 
+          {title}
+        </a>
+        
+        {submenutab &&
           <ul className="nav-sub" aria-labelledby="navbarDropdown">
             {titlemenu1 &&
-            <li className={`${
-            a_href === activeTab || a_href1 === activeTab ? "active-colors" : ""
-          }`} >
-              <a className={`${
-            a_href === activeTab || a_href1 === activeTab ? "active-colors" : ""
-          }`} 
-          href={a_href1}>{titlemenu1}</a>
-            </li>}
-  
-            {titlemenu2 &&<li>
+              <li className={`${a_href === activeTab || a_href1 === activeTab ? "active-colors" : ""
+                }`} >
+                <a className={`${a_href === activeTab || a_href1 === activeTab ? "active-colors" : ""
+                  }`}
+                  href={a_href1}>{titlemenu1}</a>
+              </li>}
+
+            {titlemenu2 && <li>
               <a className="" href={a_href2}>{titlemenu2}</a>
             </li>}
-  
-            {titlemenu3 &&<li>
+
+            {titlemenu3 && <li>
               <a className="" href={a_href3}>{titlemenu3}</a>
             </li>}
-  
-            {titlemenu4 &&<li>
+
+            {titlemenu4 && <li>
               <a className="" href={a_href4}>{titlemenu4}</a>
             </li>}
-  
-            {titlemenu5 &&<li>
+
+            {titlemenu5 && <li>
               <a className="" href="#">{titlemenu5}</a>
             </li>}
-  
-            {titlemenu6 &&<li>
+
+            {titlemenu6 && <li>
               <a className="" href="#">{titlemenu6}</a>
             </li>}
           </ul>
-          }
-        </li>
-        <style jsx>
-          {`
+        }
+      </li>
+      <style jsx>
+        {`
             /* Navbar */
             nav {
               display: flex;
@@ -268,9 +264,9 @@ function NavSidbar({classDNone,activeTab, title ,submenutab, onClick,titlemenu1,
             @media screen and (max-width: 426px) {
             }
           `}
-        </style>
-      </>
-    );
+      </style>
+    </>
+  );
 }
 
 export default NavSidbar;
